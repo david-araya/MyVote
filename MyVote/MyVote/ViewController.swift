@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var initButton: UIButton!
-    @IBAction func initButtonPressed(_ sender: Any) {
+    @IBOutlet var initLabel: UIButton!
+  
+    @IBAction func initLabelPress(_ sender: UIButton) {
+        print("Button has been pressed")
+    }
+    
+    @IBOutlet var initButton: MyVote!
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
         
         print("Button has been pressed")
     }
@@ -19,11 +26,6 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        let initButton = UIButton(type: .custom)
-        initButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
-        initButton.layer.cornerRadius = 0.5 * initButton.bounds.size.width
-        initButton.clipsToBounds = true
-
         view.addSubview(initButton)
         // Do any additional setup after loading the view.
     }
