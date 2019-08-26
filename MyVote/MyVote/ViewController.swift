@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var initButton: MyVote!
+    @IBAction func buttonAction(_ sender: Any) {
+        print("Button i clicked")
+    }
 
     override func viewDidLoad() {
         
