@@ -30,7 +30,6 @@ class ViewController: UIViewController {
         
         locationPicker.dataSource = self
         locationPicker.delegate = self
-        
         //view.addSubview(initButton)
         // Do any additional setup after loading the view.
     }
@@ -55,3 +54,4 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         return locationSource[row]
     }
 }
+
