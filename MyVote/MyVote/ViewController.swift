@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var nameField: UITextField!
+    
+    @IBOutlet var locationPicker: UIPickerView!
     
     @IBAction func buttonAction(_ sender: Any) {
         print("Button i clicked")
