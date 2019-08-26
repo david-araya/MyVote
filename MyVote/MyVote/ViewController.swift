@@ -9,24 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet var initLabel: UIButton!
-  
-    @IBAction func initLabelPress(_ sender: UIButton) {
-        print("Button has been pressed")
-    }
     
     @IBOutlet var initButton: MyVote!
-    
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        print("Button has been pressed")
-    }
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        view.addSubview(initButton)
+        //view.addSubview(initButton)
         // Do any additional setup after loading the view.
     }
 
