@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAction(_ sender: Any) {
         print("Button i clicked")
+        
+        
     }
 
     override func viewDidLoad() {
