@@ -10,7 +10,14 @@ import UIKit
 
 class Page2ViewController: UIViewController {
 
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    
+    var finalName = ""
+    
     override func viewDidLoad() {
+        
+        nameLabel.text = finalName
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

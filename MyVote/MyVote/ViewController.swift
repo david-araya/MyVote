@@ -10,19 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
    
+    var nameText = ""
+    
     private let locationSource = ["Canada", "United States of America", "France", "England"]
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
+
     @IBOutlet var nameField: UITextField!
     
     @IBOutlet var locationPicker: UIPickerView!
     
     @IBAction func buttonAction(_ sender: Any) {
-        print("Button i clicked")
-        
+        self.nameText = nameField.text!
+        performSegue(withIdentifier: "name", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! Page2ViewController
+        vc.finalName = self.nameText
         
     }
+    
 
     override func viewDidLoad() {
         
