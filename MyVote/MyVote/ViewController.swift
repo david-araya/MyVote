@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! Page2ViewController
+        let vc = segue.destination as! Page2ViewController
         vc.finalName = self.nameText
     }
     
