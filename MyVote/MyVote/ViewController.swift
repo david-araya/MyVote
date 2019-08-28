@@ -23,7 +23,13 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAction(_ sender: Any) {
         self.nameText = nameField.text!
+        hideKeyboard()
+        
         performSegue(withIdentifier: "name", sender: self)
+    }
+    
+    func hideKeyboard() {
+        nameField.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,7 +47,6 @@ class ViewController: UIViewController {
         
         locationPicker.dataSource = self
         locationPicker.delegate = self
-        nameField.delegate = self
         //view.addSubview(initButton)
         // Do any additional setup after loading the view.
         

@@ -18,13 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-ZD-cu6">
-                                <rect key="frame" x="94" y="571" width="187" height="76"/>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVA-ta-KIh">
+                                <rect key="frame" x="111" y="43" width="153" height="149"/>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter first name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-3Z-PZ4">
+                                <rect key="frame" x="94" y="221" width="187" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc7-6c-ET5">
+                                <rect key="frame" x="123" y="445" width="134" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="uuB-8x-8YE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-ZD-cu6">
+                                <rect key="frame" x="94" y="295" width="46" height="76"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="0.45000000000000001" y="0.0" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="vdT-Y2-6RT"/>
-                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -38,35 +53,11 @@
                                     <segue destination="DQN-20-3AK" kind="presentation" modalTransitionStyle="crossDissolve" id="Z4e-p4-RMl"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVA-ta-KIh">
-                                <rect key="frame" x="79" y="237" width="217" height="177"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="177" id="bLd-Jc-gbB"/>
-                                </constraints>
-                            </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter first name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-3Z-PZ4">
-                                <rect key="frame" x="94" y="177" width="187" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc7-6c-ET5">
-                                <rect key="frame" x="123" y="445" width="134" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="uuB-8x-8YE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lK3-3Z-PZ4" firstAttribute="centerX" secondItem="QVA-ta-KIh" secondAttribute="centerX" id="3VT-T1-t0t"/>
-                            <constraint firstItem="QVA-ta-KIh" firstAttribute="centerX" secondItem="rz0-ZD-cu6" secondAttribute="centerX" id="BHR-Nv-4ur"/>
-                            <constraint firstItem="QVA-ta-KIh" firstAttribute="top" secondItem="lK3-3Z-PZ4" secondAttribute="bottom" constant="30" id="BfV-k3-mXF"/>
                             <constraint firstItem="zc7-6c-ET5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="GQq-SO-2Uw"/>
-                            <constraint firstAttribute="bottom" secondItem="rz0-ZD-cu6" secondAttribute="bottom" constant="20" symbolic="YES" id="ISd-8e-asz"/>
                             <constraint firstItem="lK3-3Z-PZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="N06-pY-YSN"/>
                             <constraint firstItem="zc7-6c-ET5" firstAttribute="top" secondItem="QVA-ta-KIh" secondAttribute="bottom" constant="31" id="UNd-Hf-Rwz"/>
                             <constraint firstItem="lK3-3Z-PZ4" firstAttribute="leading" secondItem="rz0-ZD-cu6" secondAttribute="leading" id="WdK-9M-mwg"/>
