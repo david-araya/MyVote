@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVA-ta-KIh">
-                                <rect key="frame" x="114" y="317" width="153" height="149"/>
+                                <rect key="frame" x="114" y="298" width="153" height="149"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter first name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-3Z-PZ4">
-                                <rect key="frame" x="97" y="474" width="187" height="30"/>
+                                <rect key="frame" x="97" y="476" width="187" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -48,12 +48,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Vote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBJ-1e-5Q0">
-                                <rect key="frame" x="121" y="49" width="133" height="46"/>
+                                <rect key="frame" x="121" y="48" width="133" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="o2n-wn-Uju">
+                                <rect key="frame" x="82" y="102" width="216" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -88,7 +92,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.63084499625319457" blue="0.42450608482815766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ugy-ZV-Veb" firstAttribute="top" secondItem="2BJ-ke-0ob" secondAttribute="bottom" constant="3" id="5re-OZ-c10"/>
                             <constraint firstItem="2BJ-ke-0ob" firstAttribute="leading" secondItem="SHr-Jh-Ghb" secondAttribute="leading" constant="48" id="Gef-Xd-4zd"/>
@@ -103,4 +107,7 @@
             <point key="canvasLocation" x="621.60000000000002" y="108.39580209895054"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="250" height="250"/>
+    </resources>
 </document>
