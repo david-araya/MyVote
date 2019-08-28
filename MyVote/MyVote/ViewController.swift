@@ -9,44 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-   
-    var nameText = ""
-    
+
     private let locationSource = ["Canada", "United States of America", "France", "England"]
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var locationLabel: UILabel!
-
     @IBOutlet var nameField: UITextField!
+    
+    @IBOutlet var locationLabel: UILabel!
     
     @IBOutlet var locationPicker: UIPickerView!
     
     @IBAction func buttonAction(_ sender: Any) {
-        self.nameText = nameField.text!
         hideKeyboard()
-        
-        performSegue(withIdentifier: "name", sender: self)
     }
     
     func hideKeyboard() {
         nameField.resignFirstResponder()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! Page2ViewController
-        vc.finalName = self.nameText
-    }
-    
-    func textFieldShouldReturn(_ nameField: UITextField) -> Bool {
-        return nameField.endEditing(false)
-    }
-
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        locationPicker.dataSource = self
-        locationPicker.delegate = self
+       locationPicker.dataSource = self
+       locationPicker.delegate = self
         //view.addSubview(initButton)
         // Do any additional setup after loading the view.
         
