@@ -12,27 +12,36 @@ class ViewController: UIViewController {
 
     private let locationSource = ["Canada", "United States of America", "France", "England"]
     
-    @IBOutlet var nameField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet var locationLabel: UILabel!
     
     @IBOutlet var locationPicker: UIPickerView!
     
     @IBAction func buttonAction(_ sender: Any) {
-        hideKeyboard()
-    }
-    
-    func hideKeyboard() {
-        nameField.resignFirstResponder()
+        
     }
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+    
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([doneButton], animated: false)
+        
+        nameTextField.inputAccessoryView = UIView()
+        
        locationPicker.dataSource = self
        locationPicker.delegate = self
         //view.addSubview(initButton)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func doneClicked(){
+        view.endEditing(true)
     }
 }
 
