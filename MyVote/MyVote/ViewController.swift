@@ -33,8 +33,6 @@ class ViewController: UIViewController {
        locationPicker.delegate = self
         //view.addSubview(initButton)
         // Do any additional setup after loading the view.
-        
-        //[nameField setDelegate: self]
     }
 }
 
