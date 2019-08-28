@@ -18,11 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVA-ta-KIh">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVA-ta-KIh">
                                 <rect key="frame" x="111" y="43" width="153" height="149"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter first name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-3Z-PZ4">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter first name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-3Z-PZ4">
                                 <rect key="frame" x="94" y="221" width="187" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -36,8 +38,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-ZD-cu6">
-                                <rect key="frame" x="94" y="295" width="46" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-ZD-cu6">
+                                <rect key="frame" x="140" y="280" width="100" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="0.45000000000000001" y="0.0" width="1" height="1"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,17 +58,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="lK3-3Z-PZ4" firstAttribute="centerX" secondItem="QVA-ta-KIh" secondAttribute="centerX" id="3VT-T1-t0t"/>
-                            <constraint firstItem="zc7-6c-ET5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="GQq-SO-2Uw"/>
-                            <constraint firstItem="lK3-3Z-PZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="N06-pY-YSN"/>
-                            <constraint firstItem="zc7-6c-ET5" firstAttribute="top" secondItem="QVA-ta-KIh" secondAttribute="bottom" constant="31" id="UNd-Hf-Rwz"/>
-                            <constraint firstItem="lK3-3Z-PZ4" firstAttribute="leading" secondItem="rz0-ZD-cu6" secondAttribute="leading" id="WdK-9M-mwg"/>
-                            <constraint firstItem="QVA-ta-KIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="79" id="YoU-uW-Ywq"/>
-                            <constraint firstItem="lK3-3Z-PZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="YtR-fS-dsm"/>
-                            <constraint firstItem="QVA-ta-KIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tbe-Nq-7fe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zc7-6c-ET5" secondAttribute="trailing" constant="118" id="wMl-j4-UpH"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
