@@ -31,6 +31,9 @@ class ViewController: UIViewController {
         vc.finalName = self.nameText
     }
     
+    func textFieldShouldReturn(_ nameField: UITextField) -> Bool {
+        return nameField.endEditing(false)
+    }
 
     override func viewDidLoad() {
         
@@ -38,8 +41,11 @@ class ViewController: UIViewController {
         
         locationPicker.dataSource = self
         locationPicker.delegate = self
+        nameField.delegate = self
         //view.addSubview(initButton)
         // Do any additional setup after loading the view.
+        
+        //[nameField setDelegate: self]
     }
 }
 
