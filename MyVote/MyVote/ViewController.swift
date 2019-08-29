@@ -22,6 +22,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
         locationPicker.dataSource = self
         locationPicker.delegate = self
     }
+    @IBAction func initButton(_ sender: Any) {
+        
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
