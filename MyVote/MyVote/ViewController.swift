@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate{
     
-    private let locationSource = ["Canada", "United States of America", "France", "England"]
+    private let locationSource = ["Canada", "U.S.A", "France", "England"]
  
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var locationPicker: UIPickerView!
