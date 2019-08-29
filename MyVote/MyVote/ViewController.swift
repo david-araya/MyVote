@@ -10,6 +10,20 @@ import UIKit
 import MapKit
 import CoreLocation
 
+final class Annotation: NSObject, MKAnnotation{
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    
+    init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?) {
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subtitle
+        
+        super.init()
+    }
+}
+
 class ViewController: UIViewController, UITextFieldDelegate{
     
     private let locationSource = ["Canada", "U.S.A", "France", "England"]
@@ -17,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var textField: UITextField!
+    @IBAction func initButton(_ sender: Any) {}
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
@@ -24,7 +39,15 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+        
+    mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        
+        let currCoordinate = CLLocationCoordinate2D(latitude: 45.244021, longitude: -75.415323)
+        let currAnnotation = Annotation (coordinate: currCoordinate, title: "You", subtitle: "Person who believes their vote does not matter")
+        
+        mapView.addAnnotation(currAnnotation)
     }
+    
     
     func setupLocationManager() {
         locationManager.delegate = self
@@ -72,20 +95,22 @@ class ViewController: UIViewController, UITextFieldDelegate{
             break
         }
     }
-        
-    @IBAction func initButton(_ sender: Any) {
-        
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
-        
-        return true
-    }
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         scrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
+    }
+}
+
+extension ViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView{
+            annotationView.animatesWhenAdded = true
+            annotationView.titleVisibility = .adaptive
+            annotationView.titleVisibility = .adaptive
+            
+            return annotationView
+        }
+        return nil
     }
 }
 
@@ -98,4 +123,3 @@ extension ViewController: CLLocationManagerDelegate{
         //
     }
 }
-
