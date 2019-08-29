@@ -76,6 +76,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zP7-Cm-j59"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="kYq-zy-KlU" id="QUh-Te-QdO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HR9-e2-noi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
