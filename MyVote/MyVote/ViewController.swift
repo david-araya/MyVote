@@ -8,42 +8,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate{
+    
     private let locationSource = ["Canada", "United States of America", "France", "England"]
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    
+ 
     @IBOutlet var locationLabel: UILabel!
-    
     @IBOutlet var locationPicker: UIPickerView!
-    
-    @IBAction func buttonAction(_ sender: Any) {
-        
-    }
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var textField: UITextField!
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-    
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
-        
-        toolBar.setItems([doneButton], animated: false)
-        
-        nameTextField.inputAccessoryView = UIView()
-        
-       locationPicker.dataSource = self
-       locationPicker.delegate = self
-        //view.addSubview(initButton)
-        // Do any additional setup after loading the view.
+        locationPicker.dataSource = self
+        locationPicker.delegate = self
     }
     
-    @objc func doneClicked(){
-        view.endEditing(true)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
     }
 }
+
+ //view.addSubview(initButton)
+ // Do any additional setup after loading the view.
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
