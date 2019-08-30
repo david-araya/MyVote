@@ -11,12 +11,8 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, UITextFieldDelegate{
-    
-    private let locationSource = ["Canada", "U.S.A", "France", "England"]
  
     @IBOutlet var mapView: MKMapView!
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var textField: UITextField!
     @IBAction func initButton(_ sender: Any) {}
     
     let locationManager = CLLocationManager()
@@ -30,6 +26,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! SecondViewController
+        destVC.userLongitude = 65.244021
     }
     
     func centerViewUserLocation(){
@@ -72,10 +73,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
         @unknown default:
             break
         }
-    }
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
     }
 }
 

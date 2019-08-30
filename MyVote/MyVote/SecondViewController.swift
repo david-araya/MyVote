@@ -28,29 +28,20 @@ class SecondViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     
+    var userLatitude: Double = 45.244021
+    var userLongitude: Double = -75.415323
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+  
     mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
-        let currCoordinate = CLLocationCoordinate2D(latitude: 45.244021, longitude: -75.415323)
+        let currCoordinate = CLLocationCoordinate2D(latitude: userLatitude, longitude: userLongitude)
         let currAnnotation = Annotation (coordinate: currCoordinate, title: "You", subtitle: "Person who believes their vote does not matter")
         
         mapView.addAnnotation(currAnnotation)
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
