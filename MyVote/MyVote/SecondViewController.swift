@@ -41,8 +41,6 @@ class SecondViewController: UIViewController {
         
         mapView.addAnnotation(currAnnotation)
     }
-    
-
 }
 
 extension ViewController: MKMapViewDelegate{
