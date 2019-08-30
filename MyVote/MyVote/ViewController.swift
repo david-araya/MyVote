@@ -13,7 +13,7 @@ import CoreLocation
 class ViewController: UIViewController, UITextFieldDelegate{
  
     @IBOutlet var mapView: MKMapView!
-    @IBAction func initButton(_ sender: Any) {}
+    @IBAction func initButton(_ sender: UIStoryboardSegue) {}
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
@@ -21,7 +21,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
-        
     }
     func setupLocationManager() {
         locationManager.delegate = self
