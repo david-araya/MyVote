@@ -50,6 +50,7 @@ class SecondViewController: UIViewController {
     }
     
     func setupLocationManager() {
+        // ERROR CAUSED HERE:
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
