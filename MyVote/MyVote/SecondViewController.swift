@@ -32,17 +32,30 @@ class SecondViewController: UIViewController {
     
     var userLatitude: Double = 45.41117
     var userLongitude: Double = -75.69812
+
+    
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
+    
+    func getCenterLocation(for mapView: MKMapView) -> CLLocation{
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    lazy var newLatitude = getCenterLocation(for: MKMapView).altitude
+   lazy var newLongitude = getCenterLocation(for: MKMapView).longitutde
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
         
     mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-        
-   let currCoordinate = CLLocationCoordinate2D(latitude: userLatitude, longitude: userLongitude)
+    
+   let currCoordinate = CLLocationCoordinate2D(latitude: newLatitude, longitude: newLongitude)
         let currAnnotation = Annotation (coordinate: currCoordinate, title: "You", subtitle: "Person who believes their vote does not matter")
         
         mapView.addAnnotation(currAnnotation)
@@ -78,6 +91,7 @@ class SecondViewController: UIViewController {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
             centerViewUserLocation()
+            locationManager.startUpdatingLocation()
             //Do map stuff
             break
         case .denied:
@@ -96,23 +110,44 @@ class SecondViewController: UIViewController {
             break
         }
     }
+    
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 extension SecondViewController: CLLocationManagerDelegate{
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print(location.coordinate)
-        }
-    }
+
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        //
+        checkLocationAuthorization()
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
 extension SecondViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCenterLocation(for: mapView)
+        let geoCoder = CLGeocoder()
+        
+        //guard center.disanc
+        
+        geoCoder.reverseGeocodeLocation(center) { [weak self] (placemarks, error) in
+            guard let self = self else { return }
+            
+            if let _ = error {
+                //TODO: Show alert informing the user
+                return
+            }
+            
+            guard let placemark = placemarks?.first else {
+                //TODO: Show alert informing the user
+                return
+            }
+        }
+    }
+    
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView{
             annotationView.animatesWhenAdded = true
@@ -123,4 +158,5 @@ extension SecondViewController: MKMapViewDelegate{
         }
         return nil
     }
+ 
 }
