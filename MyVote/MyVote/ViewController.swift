@@ -14,16 +14,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
 
     var userLat: Double = 0
     
-    @IBOutlet var initializeButton: UIButton(type: .custom)
+    @IBOutlet var initializeButton: UIButton!
     
     @IBAction func initButton(_ sender: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initializeButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
-        initializeButton.layer.cornerRadius = 0.5 * initializeButton.bounds.size.width
-        initializeButton.clipsToBounds = true
-        view.addSubview(initializeButton)
+
     }
 }
