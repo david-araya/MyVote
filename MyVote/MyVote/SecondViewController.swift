@@ -40,7 +40,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         checkLocationServices()
         
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+    mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
    let currCoordinate = CLLocationCoordinate2D(latitude: userLatitude, longitude: userLongitude)
         let currAnnotation = Annotation (coordinate: currCoordinate, title: "You", subtitle: "Person who believes their vote does not matter")
@@ -52,6 +52,7 @@ class SecondViewController: UIViewController {
         // ERROR CAUSED HERE:
        locationManager.delegate = self
        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+       locationManager.startUpdatingLocation()
     }
     
     func centerViewUserLocation(){
@@ -101,7 +102,9 @@ class SecondViewController: UIViewController {
 
 extension SecondViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //
+        if let location = locations.first {
+            print(location.coordinate)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

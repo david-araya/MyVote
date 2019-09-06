@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your location to remember where button was pressed</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This is why we need your location</string>
 	<key>CFBundleExecutable</key>
