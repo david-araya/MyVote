@@ -16,6 +16,7 @@
 		3F868130231324C100811456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F86812E231324C100811456 /* LaunchScreen.storyboard */; };
 		3F86813B231324C100811456 /* MyVoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F86813A231324C100811456 /* MyVoteTests.swift */; };
 		3F868146231324C100811456 /* MyVoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F868145231324C100811456 /* MyVoteUITests.swift */; };
+		3FC6C2802322D7F100FB9250 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6C27F2322D7F100FB9250 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3F868141231324C100811456 /* MyVoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyVoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F868145231324C100811456 /* MyVoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteUITests.swift; sourceTree = "<group>"; };
 		3F868147231324C100811456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC6C27F2322D7F100FB9250 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				3F2C3B452313478B009ACC26 /* Source */,
 				3F868125231324C000811456 /* AppDelegate.swift */,
+				3FC6C27F2322D7F100FB9250 /* RoundButton.swift */,
 				3F868127231324C000811456 /* ViewController.swift */,
 				3F0819A123187B4200C97D44 /* SecondViewController.swift */,
 				3F868129231324C000811456 /* Main.storyboard */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0819A223187B4200C97D44 /* SecondViewController.swift in Sources */,
+				3FC6C2802322D7F100FB9250 /* RoundButton.swift in Sources */,
 				3F2C3B44231342A3009ACC26 /* MyVote.swift in Sources */,
 				3F868128231324C000811456 /* ViewController.swift in Sources */,
 				3F868126231324C000811456 /* AppDelegate.swift in Sources */,

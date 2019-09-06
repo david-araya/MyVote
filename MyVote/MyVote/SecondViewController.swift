@@ -36,7 +36,6 @@ class SecondViewController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
@@ -51,10 +50,8 @@ class SecondViewController: UIViewController {
     
     func setupLocationManager() {
         // ERROR CAUSED HERE:
-       // locationManager.delegate = self
-       // locationManager.desiredAccuracy = kCLLocationAccuracyBest
-       // locationManager.requestWhenInUseAuthorization()
-       // locationManager.requestLocation()
+       locationManager.delegate = self
+       locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
     func centerViewUserLocation(){
@@ -68,11 +65,7 @@ class SecondViewController: UIViewController {
         if CLLocationManager.locationServicesEnabled()
         {
             //setup our location manager
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.requestLocation()
-            //setupLocationManager()
+            setupLocationManager()
             checkLocationAuthorization()
         } else {
             //show alert letting the user know they have to turn it on
