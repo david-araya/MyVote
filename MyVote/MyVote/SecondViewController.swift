@@ -30,8 +30,8 @@ class SecondViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
     
-    var userLatitude: Double = 0
-    var userLongitude: Double = 0
+    var userLatitude: Double = 45.41117
+    var userLongitude: Double = -75.69812
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
