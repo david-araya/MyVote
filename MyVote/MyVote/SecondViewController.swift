@@ -23,7 +23,6 @@ class SecondViewController: UIViewController {
     }
     
     func setupLocationManager() {
-        // ERROR CAUSED HERE:
        locationManager.delegate = self
        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
@@ -38,7 +37,6 @@ class SecondViewController: UIViewController {
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled()
         {
-            //setup our location manager
             setupLocationManager()
             checkLocationAuthorization()
         } else {
@@ -66,8 +64,6 @@ class SecondViewController: UIViewController {
             break
         case .authorizedAlways:
             break
-        @unknown default:
-            break
         }
     }
     
@@ -79,17 +75,20 @@ class SecondViewController: UIViewController {
     }
 }
 
-/////////////////////////////////////////////////////////////////////////////////////
-
 extension SecondViewController: CLLocationManagerDelegate{
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        
+        mapView.setRegion(region, animated: true)
+    }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
 }
 
-/////////////////////////////////////////////////////////////////////////////////////
 extension SecondViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)

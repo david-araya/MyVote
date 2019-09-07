@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnf-KU-TQe" customClass="RoundButton" customModule="MyVote" customModuleProvider="target">
-                                <rect key="frame" x="8" y="174" width="359" height="318"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnf-KU-TQe" customClass="RoundButton" customModule="MyVote" customModuleProvider="target">
+                                <rect key="frame" x="8" y="174" width="359" height="319"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,6 +42,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bnf-KU-TQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="2cU-j8-31g"/>
+                            <constraint firstItem="bnf-KU-TQe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6i7-nT-TrZ"/>
+                            <constraint firstItem="bnf-KU-TQe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="154" id="DAA-JK-FSI"/>
+                            <constraint firstItem="bnf-KU-TQe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="alc-Nz-eab"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -61,17 +66,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kYq-zy-KlU">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kYq-zy-KlU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="Gpj-kk-o1m">
-                                <rect key="frame" x="170" y="321" width="34" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="Gpj-kk-o1m">
+                                <rect key="frame" x="170" y="321" width="35" height="25"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8h-ai-mR1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8h-ai-mR1">
                                 <rect key="frame" x="20" y="24" width="36" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -80,6 +82,18 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kYq-zy-KlU" firstAttribute="bottom" secondItem="zP7-Cm-j59" secondAttribute="bottom" id="JYK-jj-B32"/>
+                            <constraint firstItem="kYq-zy-KlU" firstAttribute="centerX" secondItem="Gpj-kk-o1m" secondAttribute="centerX" id="Kf2-P8-YZR"/>
+                            <constraint firstItem="Gpj-kk-o1m" firstAttribute="leading" secondItem="zP7-Cm-j59" secondAttribute="leading" constant="170" id="Ns1-He-tnf"/>
+                            <constraint firstItem="t8h-ai-mR1" firstAttribute="top" secondItem="zP7-Cm-j59" secondAttribute="top" constant="4" id="RnW-3c-qGq"/>
+                            <constraint firstItem="t8h-ai-mR1" firstAttribute="leading" secondItem="zP7-Cm-j59" secondAttribute="leading" constant="20" id="bMu-xd-GAc"/>
+                            <constraint firstItem="Gpj-kk-o1m" firstAttribute="top" secondItem="zP7-Cm-j59" secondAttribute="top" constant="301" id="byp-Am-t9e"/>
+                            <constraint firstItem="kYq-zy-KlU" firstAttribute="leading" secondItem="by3-h4-xxh" secondAttribute="leading" id="fGU-It-9eR"/>
+                            <constraint firstItem="kYq-zy-KlU" firstAttribute="centerY" secondItem="Gpj-kk-o1m" secondAttribute="centerY" id="fkl-J5-LI4"/>
+                            <constraint firstItem="kYq-zy-KlU" firstAttribute="top" secondItem="by3-h4-xxh" secondAttribute="top" id="vab-xk-U70"/>
+                            <constraint firstAttribute="trailing" secondItem="kYq-zy-KlU" secondAttribute="trailing" id="vbg-Jc-IKH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zP7-Cm-j59"/>
                     </view>
                     <connections>
