@@ -15,11 +15,13 @@ class SecondViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 10000
+    let regionInMeters: Double = 500
 
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+        
+         mapView.tintColor = UIColor.red
     }
     
     func setupLocationManager() {
@@ -63,6 +65,8 @@ class SecondViewController: UIViewController {
             // Show alert letting them know whats happening
             break
         case .authorizedAlways:
+            break
+        @unknown default:
             break
         }
     }
