@@ -15,7 +15,7 @@ class SecondViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 500
+    let regionInMeters: Double = 10000
 
     override func viewDidLoad() {
         super.viewDidLoad()
