@@ -10,62 +10,22 @@ import UIKit
 import MapKit
 import CoreLocation
 
-final class Annotation: NSObject, MKAnnotation{
-    var coordinate: CLLocationCoordinate2D
-    var title: String?
-    var subtitle: String?
-    
-    init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?) {
-        self.coordinate = coordinate
-        self.title = title
-        self.subtitle = subtitle
-        
-        super.init()
-    }
-}
-
-/////////////////////////////////////////////////////////////////////////////////////
-
 class SecondViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
     
-    var userLatitude: Double = 45.41117
-    var userLongitude: Double = -75.69812
-
-    
-    
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 1000
-    
-    func getCenterLocation(for mapView: MKMapView) -> CLLocation{
-        let latitude = mapView.centerCoordinate.latitude
-        let longitude = mapView.centerCoordinate.longitude
-        
-        return CLLocation(latitude: latitude, longitude: longitude)
-    }
-    
-    lazy var newLatitude = getCenterLocation(for: MKMapView).altitude
-   lazy var newLongitude = getCenterLocation(for: MKMapView).longitutde
-    
-    
+    let regionInMeters: Double = 10000
+
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
-        
-    mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-    
-   let currCoordinate = CLLocationCoordinate2D(latitude: newLatitude, longitude: newLongitude)
-        let currAnnotation = Annotation (coordinate: currCoordinate, title: "You", subtitle: "Person who believes their vote does not matter")
-        
-        mapView.addAnnotation(currAnnotation)
     }
     
     func setupLocationManager() {
         // ERROR CAUSED HERE:
        locationManager.delegate = self
        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-       locationManager.startUpdatingLocation()
     }
     
     func centerViewUserLocation(){
@@ -111,6 +71,12 @@ class SecondViewController: UIViewController {
         }
     }
     
+    func getCenterLocation(for mapView: MKMapView) -> CLLocation{
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -145,18 +111,4 @@ extension SecondViewController: MKMapViewDelegate{
             }
         }
     }
-    
-    
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView{
-            annotationView.animatesWhenAdded = true
-            annotationView.titleVisibility = .adaptive
-            annotationView.titleVisibility = .adaptive
-            
-            return annotationView
-        }
-        return nil
-    }
- 
 }
