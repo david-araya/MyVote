@@ -12,11 +12,11 @@
 		3F868126231324C000811456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F868125231324C000811456 /* AppDelegate.swift */; };
 		3F868128231324C000811456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F868127231324C000811456 /* ViewController.swift */; };
 		3F86812B231324C000811456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F868129231324C000811456 /* Main.storyboard */; };
-		3F86812D231324C100811456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F86812C231324C100811456 /* Assets.xcassets */; };
 		3F868130231324C100811456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F86812E231324C100811456 /* LaunchScreen.storyboard */; };
 		3F86813B231324C100811456 /* MyVoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F86813A231324C100811456 /* MyVoteTests.swift */; };
 		3F868146231324C100811456 /* MyVoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F868145231324C100811456 /* MyVoteUITests.swift */; };
 		3FC6C2802322D7F100FB9250 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6C27F2322D7F100FB9250 /* RoundButton.swift */; };
+		3FC6C28223239F9E00FB9250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC6C28123239F9E00FB9250 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,6 @@
 		3F868125231324C000811456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F868127231324C000811456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F86812A231324C000811456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3F86812C231324C100811456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F86812F231324C100811456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F868131231324C100811456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F868136231324C100811456 /* MyVoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyVoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +52,7 @@
 		3F868145231324C100811456 /* MyVoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteUITests.swift; sourceTree = "<group>"; };
 		3F868147231324C100811456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC6C27F2322D7F100FB9250 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		3FC6C28123239F9E00FB9250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 				3F868127231324C000811456 /* ViewController.swift */,
 				3F0819A123187B4200C97D44 /* SecondViewController.swift */,
 				3F868129231324C000811456 /* Main.storyboard */,
-				3F86812C231324C100811456 /* Assets.xcassets */,
+				3FC6C28123239F9E00FB9250 /* Assets.xcassets */,
 				3F86812E231324C100811456 /* LaunchScreen.storyboard */,
 				3F868131231324C100811456 /* Info.plist */,
 			);
@@ -247,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F868130231324C100811456 /* LaunchScreen.storyboard in Resources */,
-				3F86812D231324C100811456 /* Assets.xcassets in Resources */,
+				3FC6C28223239F9E00FB9250 /* Assets.xcassets in Resources */,
 				3F86812B231324C000811456 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
